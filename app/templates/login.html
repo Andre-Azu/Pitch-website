@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} 
+Login page 
+{% endblock %}
+
+{% block content %}
+<form>
+    <div class="form-group">
+        <label for="email" style='font-size: 45px;'>Email Address:</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+
+        <label for="password" style='font-size: 42px;'>Enter Password:</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+    </div>
+</form>
+
+{% endblock %}

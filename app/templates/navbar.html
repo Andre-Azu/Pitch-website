@@ -1,14 +1,14 @@
-
-    
-
-<nav>
-    <div class="navbar-nav"> 
-        <h1 style='font-family:Times New Roman, Times, serif;'>Your Pitch, <br> Your Reach</h1>
-        <div style= "position:relative; left:600px;">
-            <a class="nav-item nav-link" id="home" href="/">Home</a>
-            <a class="nav-item nav-link" id="logout" href="/logout">Log out</a>
-            <a class="nav-item nav-link" id="login" href="/login" >Login</a>
-            <a class="nav-item nav-link" id="signup" href="/sign-up">Sign up</a>
-        </div>
+<nav class="navbar-expand-lg navbar-dark bg-light">
+    <div style = "position:relative; left:800px;")>
+        {% if user.is_authenticated %}
+        <a class="nav-item nav-link" id="home" href="/">Home</a>
+        <a class="nav-item nav-link" id="logout" href="/logout">Log out</a>
+    {% else %}
     </div>
+    
+    <div style = "position:relative; left:800px;")>
+        <a class="nav-item nav-link" id="login" href="/login" >Login</a>
+        <a class="nav-item nav-link" id="signup" href="/sign-up">Sign up</a>
+    </div>
+  {% endif %}
 </nav>

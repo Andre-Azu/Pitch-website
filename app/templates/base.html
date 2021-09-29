@@ -20,6 +20,9 @@
       />
       <title>Pitch Mainia</title>
     </head>
+    {% block navbar %}
+    {% include 'navbar.html' %}
+    {% endblock %}
     <body>
         <div class="container">
             {% block content %}

@@ -73,3 +73,19 @@ def interview_pitch():
             flash("Pitch added!", category="success")
 
     return render_template("interview_pitch.html", user=current_user)
+
+@views.route('/promotion_pitch', methods=['GET', 'POST'])
+@login_required
+def promotion():
+    if request.method == 'POST':
+        pitch=request.form.get('pitch')
+
+        if len(pitch) <=1:
+            flash('Pitch too short', category='error')
+        else:
+            new_pitch = Pitch(data=pitch, user_id=current_user.id)
+            db.session.add(new_pitch)
+            db.session.commit()
+            flash("Pitch added!", category="success")
+
+    return render_template("promotion.html", user=current_user)

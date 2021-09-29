@@ -63,7 +63,7 @@ def sign_up():
             #add user to database
             flash('account created',category='success')
             #to redirect the user to the homepage of the website, 
-            return redirect(url_for('views.home'))
+            return redirect(url_for('views.profile'))
 
 
-    return render_template("sign_up.html" ,text="Hello new user :)", user=current_user) 
+    return render_template("sign_in.html" ,text="Hello new user :)", user=current_user) 

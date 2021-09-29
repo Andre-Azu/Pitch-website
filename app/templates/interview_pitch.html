@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Pickup Lines</h1>
-<p>Pitch your coolest pickup lines here</p>
+<h1>Interview Pitching </h1>
+<p>Pitch your interview pitch here</p>
 <p>Here are some already pitched ideas</p>
 
 
@@ -16,18 +16,18 @@
 
    
     <div align="right">
-        <small>Created on :{{pitch.date}}</small>
+        <small>Created on :{{pitch.date}} </small>
     </div>
-    <br />
+    <br //>
     
     {% endfor %}
 
-<h1 align='center'>Your Pickup Lines.. </h1>
+<h1 align='center'>Create your interview pitch.. </h1>
 <form method="POST">
     <textarea name="pitch" id="pitch" class="form-control">Add your pitch..</textarea>
     <div align='center'>
         <br />
-        <button class='btn-outline-success' type='submit'>Add idea</button>
+        <button class='btn-outline-success' type='submit'>Add Idea</button>
     </div>
 </form>
 

@@ -11,4 +11,24 @@ Your Profile.
     <button><a class="nav-item nav-link" id="interview_pitch" href="/interview_pitch">Interview Pitch</a></button>
     <button><a class="nav-item nav-link" id="promotion_pitch" href="/promotion_pitch">Promotion Pitch</a></button>
 </div>
+
+
+<h2> All Pitches </h2>
+<ul class='list-group list-group-flush' id="pitchs">
+    {% for pitch in user.pitchs%}
+    <li class='list-group-item'>{{pitch.data}}
+        <button type='button' class='close' onClick='deletePitch ({{pitch.id}})'>
+            <span aria-hidden='true'>&times;</span>
+        </button>
+    </li>
+
+   
+    <div align="right">
+        <small>Created on :{{pitch.date}} </small>
+    </div>
+    <br //>
+    
+    {% endfor %}
+
+
 {% endblock %}

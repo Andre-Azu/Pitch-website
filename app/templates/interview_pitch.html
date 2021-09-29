@@ -1,35 +1,45 @@
+<link rel="stylesheet" href="../static/styles.css">
 {% extends "base.html" %}
 
 {% block content %}
 <h1>Interview Pitching </h1>
-<p>Pitch your interview pitch here</p>
-<p>Here are some already pitched ideas</p>
+< br />
 
 
-<ul class='list-group list-group-flush' id="pitchs">
-    {% for pitch in user.pitchs%}
-    <li class='list-group-item'>{{pitch.data}}
-        <button type='button' class='close' onClick='deletePitch ({{pitch.id}})'>
-            <span aria-hidden='true'>&times;</span>
-        </button>
-    </li>
-
-   
-    <div align="right">
-        <small>Created on :{{pitch.date}} </small>
+<div class='row'>
+    <div class="col-md-6">
+        <h2 align='center'>Create your interview pitch.. </h2>
+        <p>Pitch your interview pitch here</p>
+        <form method="POST">
+            <textarea name="pitch" id="pitch" class="form-control">Add your pitch..</textarea>
+                <div align='center'>
+                    <br />
+                    <button class='button' type='submit'><span> Add idea</span></button>
+                </div>
+        </form>
     </div>
-    <br //>
-    
-    {% endfor %}
-
-<h1 align='center'>Create your interview pitch.. </h1>
-<form method="POST">
-    <textarea name="pitch" id="pitch" class="form-control">Add your pitch..</textarea>
-    <div align='center'>
-        <br />
-        <button class='btn-outline-success' type='submit'>Add Idea</button>
+    <div class='col-md-6'>
+        <h2>Here are some already pitched ideas</h2>
+        <ul class='list-group list-group-flush' id="pitchs">
+            {% for pitch in user.pitchs%}
+            <li class='list-group-item'>{{pitch.data}}
+                <button type='button' class='close' onClick='deletePitch ({{pitch.id}})'>
+                    <span aria-hidden='true'>&times;</span>
+                </button>
+            </li>
+        
+           
+            <div align="right">
+                <small>Created on :{{pitch.date}} </small>
+            </div>
+            <br //>
+            
+            {% endfor %}
     </div>
-</form>
+</div>
+
+
+
 
 
 {% endblock %}

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../static/styles.css">
 {% extends "base.html" %}
 {% block title %} 
 Your Profile.
@@ -5,11 +6,19 @@ Your Profile.
 
 
 {% block content %}
-<div align="center">
-    <button><a class="nav-item nav-link" id="product_pitch" href="/product_pitch">Product Pitches</a></button>
-    <button><a class="nav-item nav-link" id="pickup_lines" href="/pickup_lines">Pickup Lines</a></button>
-    <button><a class="nav-item nav-link" id="interview_pitch" href="/interview_pitch">Interview Pitch</a></button>
-    <button><a class="nav-item nav-link" id="promotion_pitch" href="/promotion_pitch">Promotion Pitch</a></button>
+<div class='row'>
+    <a class="nav-item nav-link" id="product_pitch" href="/product_pitch">
+        <button class='button'><span>Product Pitches</span></button>
+    </a>
+    <a class="nav-item nav-link" id="pickup_lines" href="/pickup_lines">
+        <button class='button'><span>Pickup Lines </span></button>
+    </a>
+    <a class="nav-item nav-link" id="interview_pitch" href="/interview_pitch">
+        <button class='button'><span>Interview Pitch</span></button>
+    </a>
+    <a class="nav-item nav-link" id="promotion_pitch" href="/promotion_pitch">
+        <button class='button'><span>Promotion Pitch</span></button>
+    </a>
 </div>
 
 

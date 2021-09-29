@@ -28,4 +28,33 @@ def profile():
 @views.route('/product_pitch', methods=['GET', 'POST'])
 @login_required
 def product_pitch():
+    if request.method == 'POST':
+        pitch=request.form.get('pitch')
+
+        if len(pitch) <=1:
+            flash('Pitch too short', category='error')
+        else:
+            new_pitch = Pitch(data=pitch, user_id=current_user.id)
+            db.session.add(new_pitch)
+            db.session.commit()
+            flash("Pitch added!", category="success")
+
     return render_template("product_pitch.html", user=current_user)
+
+
+@views.route('/pickup_lines', methods=['GET', 'POST'])
+@login_required
+def pickup_lines():
+    if request.method == 'POST':
+        pitch=request.form.get('pitch')
+
+        if len(pitch) <=1:
+            flash('Pitch too short', category='error')
+        else:
+            new_pitch = Pitch(data=pitch, user_id=current_user.id)
+            db.session.add(new_pitch)
+            db.session.commit()
+            flash("Pitch added!", category="success")
+
+    return render_template("pickup_lines.html", user=current_user)
+

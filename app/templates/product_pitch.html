@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Product Pitching </h1>
+<p>Pitch your Product promotion ideas here</p>
+<p>Here are some already pitched ideas</p>
+
+
+<ul class='list-group list-group-flush' id="pitchs">
+    {% for pitch in user.pitchs%}
+    <li class='list-group-item'>{{pitch.data}}
+        <button type='button' class='close' onClick='deletePitch ({{pitch.id}})'>
+            <span aria-hidden='true'>&times;</span>
+        </button>
+    </li>
+
+   
+    <div align="right">
+        <small>Created on :{{pitch.date}}</small>
+    </div>
+    <br //>
+    
+    {% endfor %}
+
+<h1 align='center'>Your product pitch.. </h1>
+<form method="POST">
+    <textarea name="pitch" id="pitch" class="form-control">Add your pitch..</textarea>
+    <div align='center'>
+        <br />
+        <button class='btn-outline-success' type='submit'>Add pitch</button>
+    </div>
+</form>
+
+
+{% endblock %}

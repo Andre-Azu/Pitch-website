@@ -19,7 +19,7 @@ def login():
                 flash("logged in succesfully", category='success')
                 login_user(user, remember=True)
                 #remember true ensures the user remains logged in as long as the server is still running
-                return redirect(url_for('views.home'))  
+                return redirect(url_for('views.profile'))  
             else:
                 flash("incorrect password, try again", category='error')
         else:

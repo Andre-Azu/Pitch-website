@@ -24,3 +24,8 @@ def profile():
             flash("Pitch added!", category="success")
 
     return render_template("profile.html", user=current_user)
+
+@views.route('/product_pitch', methods=['GET', 'POST'])
+@login_required
+def product_pitch():
+    return render_template("product_pitch.html", user=current_user)

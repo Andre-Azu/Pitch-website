@@ -7,6 +7,11 @@ This app allows users to post their pitches and view other peoples pitches
 no special setup required, access the app via the livelink
 ### Live Link
 
+https://pitch-website.herokuapp.com/
+
+## Sample account details for log-in 
+Email Address: andre.azu@student.moringaschool.com
+Password: 12345
 ## Known Bugs
 There is an error with deleting the pitches
 ## Technologies Used
